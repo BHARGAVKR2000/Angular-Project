@@ -1,4 +1,4 @@
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from '../interaction.service';
 
@@ -9,16 +9,13 @@ import { InteractionService } from '../interaction.service';
 })
 export class HomeComponent implements OnInit {
 
+  name : string = "";
+  message : string = "defalt message";
+  loginDetails : any;
   constructor(private interactionService : InteractionService) { }
 
-  ngOnInit(): void {
-      this.interactionService.loginMessage$.subscribe(
-        message => {
-          console.log("Inside home component")
-          console.log(message);
-          alert(message);
-        }
-      );
+  ngOnInit(){
+    this.loginDetails = this.interactionService.getDetails();
   }
 
 }

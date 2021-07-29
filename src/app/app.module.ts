@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InteractionService } from './interaction.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [InteractionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,15 +22,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     console.log(f.value);  // { first: '', last: '' }
+  
+    console.log("f.value type "+typeof f.value)
     this.interactionService.sendMessage(f.value);
+  
     console.log("interaction method called");
     this.router.navigate(['home']);
   }
 
-  passData(){
-    
-    this.interactionService.sendMessage("Message Passed form login..");
-  }
+
 
  
 
