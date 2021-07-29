@@ -1,0 +1,18 @@
+<div>
+  <form #f ="ngForm" (ngSubmit) = "onSubmit(f)" novalidate> 
+   
+    <label for="username">UserName</label>
+    <input  required minlength="5" maxlength="10" ngModel type="text"  name="username" #username = 'ngModel' (change) ='log(username)'  /><br />
+    <div class = "alert alert-danger" *ngIf="username.touched && !username.valid && username.errors">
+      <div *ngIf="username.errors.required ">UserName is required</div>
+      <div *ngIf="username.errors.minlength">UserName should be minimum {{username.errors.minlength.requiredLength}} characters</div>
+      <div *ngIf="username.errors.maxlength">UserName maximum character 10</div>
+    </div>
+    
+    <label for="password">Password</label>
+    <input type="password"  class="text" required /><br>   
+    <!-- <input  type="submit" routerLink = "/home" value="Submit" />     -->
+    <button type = "submit" class="btn btn-primary"  >Submit</button>
+  </form>
+</div>
+
